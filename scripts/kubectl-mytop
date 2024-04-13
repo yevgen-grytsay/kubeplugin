@@ -3,10 +3,7 @@
 # Define command-line arguments
 
 RESOURCE_TYPE=${1:-po}
-# RESOURCE_TYPE=${RESOURCE_TYPE:-po}
-
 NAMESPACE=${2:-default}
-# NAMESPACE=${NAMESPACE:-default}
 
 # Retrieve resource usage statistics from Kubernetes
 kubectl top $RESOURCE_TYPE -n $NAMESPACE | tail -n +2 | while read line
